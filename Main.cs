@@ -16,19 +16,19 @@ namespace SummonLimit
     ///   </para>
     ///   This value is
     ///   <value>11</value>
-    ///   as of Terraria 1.3.4.4.
+    ///   as of Terraria 1.4.0.5.
     /// </summary>
     internal const ushort MaxSummons = 11;
 
     /// <summary>
     ///   The root permission for the plugin.
     /// </summary>
-    internal const string Permission = "summonlimit";
+    internal const string Permission = "summon.limit";
 
     /// <summary>
     ///   Message used for kicking the player.
     /// </summary>
-    internal const string KickMessage = "You've exceeded the amount of allowed {0}.";
+    internal const string KickMessage = "You have exceeded the max amount of allowed minions.";
 
     /// <summary>
     ///   <see cref="Timer" /> used for performing minion checks
