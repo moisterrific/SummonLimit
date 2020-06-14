@@ -20,7 +20,12 @@ namespace SummonLimit
       VenomSpider, JumperSpider, DangerousSpider,
       OneEyedPirate, SoulscourgePirate, PirateCaptain,
       UFOMinion, Raven, Tempest, DeadlySphere,
-      StardustCellMinion, StardustDragon2 // including other kinds seem to overcount
+      StardustCellMinion, StardustDragon2, // including other kinds seem to overcount
+      BabyBird, VampireFrog, Smolstar, BatOfLight, // Journey's End minions
+      StormTigerTier1, StormTigerTier2, StormTigerTier3, EmpressBlade // More Journey's End Minions
+      // TODO: Fix StormTigerCheck so it actually works.
+      // Though not a priority since it is highly unlikely to cause fps drops due to it being one minion.
+      // Only concern is that cheaters can make their Desert Tiger do massive damage.
     };
 
     /// <summary>
@@ -116,13 +121,13 @@ namespace SummonLimit
 
       if (!IsWarned(player))
       {
-        TShock.Log.Info($"{player.Name} was warned for exceeding minion limit of {max} minions.");
+        TShock.Log.ConsoleInfo($"{player.Name} was warned for exceeding minion limit of {max} minions.");
         Warn(player);
       }
       else
       {
-        TShock.Log.Info($"{player.Name} was kicked for repeatedly exceeding minion limit of {max} minions.");
-        TShock.Utils.Kick(player, $"{KickMessage} ({max})", true);
+        TShock.Log.ConsoleInfo($"{player.Name} was kicked for repeatedly exceeding minion limit of {max} minions.");
+        player.Kick(KickMessage, true, true);
       }
     }
 
